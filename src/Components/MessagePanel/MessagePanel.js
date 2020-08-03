@@ -31,6 +31,11 @@ class MessagePanel extends Component {
   
 
   componentDidMount=()=>{
+    axios.get('http://localhost:8888/restapi/messages')
+    .then(response =>{
+      this.setState({messages: response.data});
+      console.log(response)
+    })
 
                  
   }

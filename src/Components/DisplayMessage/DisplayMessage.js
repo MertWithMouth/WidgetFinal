@@ -29,10 +29,10 @@ componentDidUpdate=()=>{
 return (
   <div className="DisplayMessage">
     <div className='message-container'>
-      {this.props.messages.map((message,index) => {
+      {this.props.messages.map(message => {
           return(
 
-              <Message  key={index} text={message} isMymessage={message.isMymessage} username={this.props.username} />
+              <Message  key={message.id} text={message.text} username={message.username} />
 
 
           )
