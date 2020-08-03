@@ -1,0 +1,194 @@
+
+.button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    align-items: center;
+   
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+  
+ 
+  .loginform{
+    margin-top: 50px;
+    text-align: center;
+    padding-right: 100px;
+  }
+
+  .LoginPage {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .imagecontainer{
+    
+    margin: auto;
+    padding: 100px;
+  }
+
+  .wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  
+   
+  }
+
+
+  .loginOuterContainer {
+    
+    
+    background: #fff;
+    border-radius: 10px;
+  
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background: #bb5f08;
+    background: -webkit-linear-gradient(-135deg, #f38b04, #d8d518);
+    background: -o-linear-gradient(-135deg,#f38b04, #d8d518);
+    background: -moz-linear-gradient(-135deg, #f38b04, #d8d518);
+    background: linear-gradient(-135deg,  #f38b04, #d8d518);
+  }
+
+  #username{
+    margin: auto;
+    width: 240px;
+    padding: 16px;
+  
+    font-size: 15px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 0px 5px 5px 0px;
+   
+    
+    
+   }
+   
+   
+
+ 
+   
+
+ .icon{
+  outline: none;
+  border: none;
+  background: #fff;
+  color: #333;
+  padding-top: 12.5px;
+  padding-bottom: 15.5px;
+  padding-left: 10px;
+  border-radius: 5px 0 0 5px;
+  vertical-align: center;
+   
+ }
+
+
+
+  
+ 
+  img {
+    height: 100px;
+    
+ }
+ 
+ .title {
+  font-family: Poppins-Bold;
+  font-size: 24px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding-bottom: 54px;
+
+ }
+
+
+
+
+
+ 
+@media (max-width: 992px) {
+  .loginOuterContainer {
+    padding: 177px 90px 33px 85px;
+  }
+  .icon{
+    padding-top: 12.5px;
+    padding-bottom: 15.5px;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .img {
+    
+    width: 35%;
+  }
+
+  .img {
+    
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .loginOuterContainer {
+    padding: 100px 80px 33px 80px;
+  }
+  .icon{
+    padding-top: 12.5px;
+    padding-bottom: 15.5px;
+    border-radius: 5px 0 0 5px;
+  }
+  .img {
+    display: none;
+  }
+
+  .img {
+    
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .loginOuterContainer {
+    padding: 100px 15px 33px 15px;
+  }
+}

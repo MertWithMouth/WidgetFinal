@@ -1,0 +1,36 @@
+.sendmessageform{
+
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgb(212, 207, 212);
+    border-radius: 0 0 10px 0;
+    height: 100%;
+    position: relative;
+    
+}
+
+.sendmessageform input{
+    
+    vertical-align: center;
+    height: 50%;
+    width: 75%;
+   margin: 20px auto;
+    outline: none;
+    border: none;
+}
+.sendmessageform button{
+    width: 15%;
+    
+    outline: none;
+    border: none;
+}
+
+  
+ 
+
+
+
+
+ 
+  
+

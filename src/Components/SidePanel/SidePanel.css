@@ -1,0 +1,15 @@
+.SidePanel {
+    box-sizing: border-box;
+    border-radius: 0 0  0 10px;
+    border-color: none;
+    padding: 10px;
+    background-color: #ddb815;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    
+  }
+  .SidePanel h3{
+      text-align: center;
+  }
+  
