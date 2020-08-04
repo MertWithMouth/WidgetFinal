@@ -31,10 +31,11 @@ class MessagePanel extends Component {
   
 
   componentDidMount(){
+    
     axios.get('http://localhost:8888/restapi/messages')
     .then(response =>{
       this.setState({messages: response.data});
-      console.log(response)
+      console.log(this.state.messages)
     })
 
                  
@@ -45,19 +46,26 @@ class MessagePanel extends Component {
 
  sendMessage=(mes)=>{
 
+  const headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  }
+
   const data={
     username: this.props.username,
     text: mes
   };
 
-  axios.post('http://localhost:8888/restapi/messages', data)
-  .then(response=> {
+    axios.post('http://localhost:8888/restapi/messages', data,{
+      headers: headers
+    })
+    .then(response=> {
 
     console.log(response)
   })
   
   
- }
+ };
 
 
  createUsers(){
@@ -86,7 +94,7 @@ class MessagePanel extends Component {
       <DisplayMessages messages={this.state.messages} username={this.props.username} />
       
      
-      <MessageBox sendMessage={this.sendMessage} />
+      <MessageBox sendMessage={this.sendMessage} username={this.props.username}/>
     
      
       
