@@ -34,8 +34,8 @@ class MessagePanel extends Component {
     
     axios.get('http://localhost:8888/restapi/messages')
     .then(response =>{
-      this.setState({messages: response.data});
-      console.log(this.state.messages)
+      this.setState({messages: response.data.data[0].messages});
+      console.log(response)
     })
 
                  
@@ -61,7 +61,7 @@ class MessagePanel extends Component {
     })
     .then(response=> {
 
-    console.log(response)
+    console.log(this.state.messages)
   })
   
   
@@ -79,8 +79,9 @@ class MessagePanel extends Component {
 
 
   render()
+  
  { 
-
+ 
   
   return (
 
