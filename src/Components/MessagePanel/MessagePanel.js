@@ -32,14 +32,16 @@ class MessagePanel extends Component {
 
   componentDidMount(){
     
-    
-// Call this function so that it fetch first time right after mounting the component
-this.tick();
+    axios.get('http://localhost:8888/restapi/messages')
+    .then(response =>{
+      this.setState({messages: response.data.data[0].messages});
+      console.log(response)
+    })
 
-// set Interval
-this.interval = setInterval(this.thick, 100);
-    
-    
+    this.interval = setInterval(
+      () => this.tick(),
+      100
+    );
 
                  
   }
@@ -55,8 +57,8 @@ this.interval = setInterval(this.thick, 100);
     .then(response =>{
       this.setState({messages: response.data.data[0].messages});
       console.log(response)
-    })}
-
+    })
+  }
 
 
  sendMessage=(mes)=>{
