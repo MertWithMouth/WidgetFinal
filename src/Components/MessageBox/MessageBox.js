@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './MessageBox.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class MessageBox extends Component {
 

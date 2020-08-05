@@ -4,7 +4,7 @@ import MessageBox from  '../MessageBox/MessageBox';
 import SidePanel from '../SidePanel/SidePanel';
 import Layout from './Layout'
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import './MessagePanel.css'
 
 
@@ -18,8 +18,8 @@ class MessagePanel extends Component {
     
     state={
       messages:[],
-      usernames:['mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber','mert','naber',]
-      
+      usernames:[]
+
           }
     
 
@@ -32,16 +32,31 @@ class MessagePanel extends Component {
 
   componentDidMount(){
     
-    axios.get('http://localhost:8888/restapi/messages')
-    .then(response =>{
-      this.setState({messages: response.data.data[0].messages});
-      console.log(response)
-    })
+    
+// Call this function so that it fetch first time right after mounting the component
+this.tick();
+
+// set Interval
+this.interval = setInterval(this.thick, 100);
+    
+    
 
                  
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+
  
+  tick = () => {
+    axios.get('http://localhost:8888/restapi/messages')
+    .then(response =>{
+      this.setState({messages: response.data.data[0].messages});
+      console.log(response)
+    })}
+
 
 
  sendMessage=(mes)=>{
@@ -61,7 +76,7 @@ class MessagePanel extends Component {
     })
     .then(response=> {
 
-    console.log(this.state.messages)
+    console.log(response)
   })
   
   
@@ -74,7 +89,8 @@ class MessagePanel extends Component {
   [...this.state.usernames, this.props.username]})
   
  }
- 
+
+
 
 
 
@@ -84,22 +100,13 @@ class MessagePanel extends Component {
  
   
   return (
-
-  
     <div className="MessagePanel">
 
-    <Layout/>
-    
-      <SidePanel users={this.state.usernames} />
-      
+      <Layout/>
+      <SidePanel users={this.state.usernames} />  
       <DisplayMessages messages={this.state.messages} username={this.props.username} />
-      
-     
       <MessageBox sendMessage={this.sendMessage} username={this.props.username}/>
-    
-     
-      
-     
+
     </div>
   );}
 }
