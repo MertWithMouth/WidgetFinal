@@ -11,6 +11,7 @@
     transition: all 0.5s;
     cursor: pointer;
     align-items: center;
+    margin-top: 15px;
    
   }
   
@@ -45,28 +46,21 @@
     margin-top: 50px;
     text-align: center;
     padding-right: 100px;
+    display: inline-block;
   }
 
   .LoginPage {
     width: 100%;
     margin: 0 auto;
+   
   }
   .imagecontainer{
     
     margin: auto;
     padding: 100px;
+    display: inline-block;
   }
 
-  .wrap {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  
-   
-  }
 
 
   .loginOuterContainer {
@@ -74,7 +68,8 @@
     
     background: #fff;
     border-radius: 10px;
-  
+    max-height: 100vh;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -85,46 +80,6 @@
     background: linear-gradient(-135deg,  #f38b04, #d8d518);
   }
 
-  #username{
-    margin: auto;
-    width: 240px;
-    padding: 16px;
-  
-    font-size: 15px;
-    font-family: 'Abel', sans-serif;
-    color: #5E6472;
-  
-    outline: none;
-    border: none;
-  
-    border-radius: 0px 5px 5px 0px;
-   
-    
-    
-   }
-   
-   
-
- 
-   
-
- .icon{
-  outline: none;
-  border: none;
-  background: #fff;
-  color: #333;
-  padding-top: 12.5px;
-  padding-bottom: 15.5px;
-  padding-left: 10px;
-  border-radius: 5px 0 0 5px;
-  vertical-align: center;
-   
- }
-
-
-
-  
- 
   img {
     height: 100px;
     
@@ -144,51 +99,25 @@
 
 
 
-
-
- 
-@media (max-width: 992px) {
-  .loginOuterContainer {
-    padding: 177px 90px 33px 85px;
-  }
-  .icon{
-    padding-top: 12.5px;
-    padding-bottom: 15.5px;
-    border-radius: 5px 0 0 5px;
-  }
-
-  .img {
-    
-    width: 35%;
-  }
-
-  .img {
-    
-    width: 50%;
-  }
-}
-
 @media (max-width: 768px) {
-  .loginOuterContainer {
-    padding: 100px 80px 33px 80px;
-  }
-  .icon{
-    padding-top: 12.5px;
-    padding-bottom: 15.5px;
-    border-radius: 5px 0 0 5px;
-  }
-  .img {
-    display: none;
+ 
+  .imagecontainer{
+    
+   
+    padding: 20px;
+    display: inline-block;
   }
 
-  .img {
-    
-    width: 100%;
+  .loginform {
+    padding: 20px;
+    margin: 5px;
   }
 }
 
 @media (max-width: 576px) {
-  .loginOuterContainer {
+  .wrap-login100 {
     padding: 100px 15px 33px 15px;
   }
 }
+
+ 

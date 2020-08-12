@@ -3,14 +3,9 @@ import './App.css';
 
 import Login from './Components/Login/Login'
 import MessagePanel from './Components/MessagePanel/MessagePanel'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {faUser} from '@fortawesome/free-solid-svg-icons'
-import {faBars} from '@fortawesome/free-solid-svg-icons'
-import {faPaperPlane} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUser)
-library.add(faBars)
-library.add(faPaperPlane)
+
+
 
 
 class App extends Component{
@@ -19,7 +14,8 @@ class App extends Component{
   
   state = {
     
-    username: null
+    username: null,
+    users: []
   }
 
     setUsername = (username) =>{
@@ -27,16 +23,22 @@ class App extends Component{
       this.setState({username})
       }
 
-    
+    setUsers = (username) =>{
+
+        this.setState({users: [...this.state.users, username]})
+        
+        }
+
+      connection = new WebSocket('ws://localhost:8080/')
   
     render(){
         return (
             <div className="App">
               {
               !this.state.username ?
-                <Login setUsername={this.setUsername}/>
+                <Login setUsername={this.setUsername} setUsers={this.setUsers}/>
                 :
-                <MessagePanel className='messagepanel' username = {this.state.username}/>
+                <MessagePanel className='messagepanel' username = {this.state.username} users={this.state.users} connection={this.connection}/>
               }
             </div>
           );

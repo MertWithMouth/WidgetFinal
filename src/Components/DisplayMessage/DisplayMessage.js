@@ -6,14 +6,17 @@ import './DisplayMessage.css'
 
 class DisplayMessages extends Component {
 
+  state = {
+    time:new Date()
+  }
+
  //will stop auto scrolling down when you send a message
  componentWillUpdate=()=>{
 
   const node=ReactDOM.findDOMNode(this)
   this.shouldScrollToBottom = node.scrollTop +node.clientHeight + 100 >= node.scrollHeight
 
-
-}
+};
 
 //Auto scrolls when some client messages
 componentDidUpdate=()=>{
@@ -25,21 +28,31 @@ componentDidUpdate=()=>{
 
 }
 
+currentTime(){
+
+this.setState({time: new Date()});
+
+
+}
+
+componentWillMount(){
+
+  setInterval(()=>this.currentTime(),1000)
+}
   render(){
 return (
-  <div className="DisplayMessage">
-    <div className='message-container'>
-      {this.props.messages.map(message => {
+  <main className="DisplayMessage">
+
+    
+      {this.props.messages.map((message, index)=> {
           return(
-
-              <Message  key={message.id} text={message.text} username={message.username} />
               
-
+              <Message key={index} myusername={this.props.username} text={message.text} username={message.user} time={this.state.time} type={message.type}/>
 
           )
       })}
-   </div>
-  </div>
+   
+  </main>
 );}
 }
 

@@ -9,15 +9,18 @@ class MessageBox extends Component {
     }
 
     messageHandler=(e) =>{
-        
+     
         this.setState({message: e.target.value})
         
-    }
+    
+}
 
     submitHandler=(e)=>{
+    
         e.preventDefault();
        this.props.sendMessage(this.state.message)
        this.setState({message:''})
+   
        
     }
 
@@ -28,12 +31,15 @@ class MessageBox extends Component {
 
         <form className="sendmessageform" onSubmit={this.submitHandler} > 
 
-      
-             <input type ='text' placeholder="Type your message"
+                
+    
+             <input className='inputarea' type ='text' placeholder="Type your message"
              onChange={this.messageHandler} 
-             value={this.state.message}
+             value={this.state.message} rows="3"
+             
              />
-             <button type='submit'>Send</button>
+            
+             <button type="submit" class="sendbutton">Send</button>
         </form>
      
    
