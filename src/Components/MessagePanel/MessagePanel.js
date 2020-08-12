@@ -10,10 +10,7 @@ class MessagePanel extends Component {
       messages:[]
 
           }
-  
-    
-
-
+ 
           componentDidMount() {
   
           //event listener

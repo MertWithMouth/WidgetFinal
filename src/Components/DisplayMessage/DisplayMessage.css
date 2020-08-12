@@ -47,6 +47,7 @@
   padding: 15px;
   border-radius: 15px;
   background: var(--othermessage-bg);
+  
 }
 .messageinfo {
   display: flex;
@@ -80,16 +81,12 @@
 }
 
 .connection{
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid black;
-  
-}
-.connection{
+  color: rgb(94, 91, 91);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 15px;
+
+  
   
 }

@@ -5,10 +5,6 @@ import Podo from '../../Assets/podo.png'
 import './Login.css'
 
 
-import './user-solid.svg'
-
-import './logo.svg'
-
 
 
 class Login extends Component {
