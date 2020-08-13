@@ -47,7 +47,7 @@
   padding: 15px;
   border-radius: 15px;
   background: var(--othermessage-bg);
-  
+  overflow-wrap: break-word;
 }
 .messageinfo {
   display: flex;
@@ -66,7 +66,8 @@
 
 .othermessage .messagecontent {
   border-bottom-left-radius: 0;
-  overflow: auto;
+  overflow-wrap: break-word;
+  
 }
 
 .mymessage {
@@ -76,7 +77,8 @@
   background: var(--mymessage-bg);
   color: #fff;
   border-bottom-right-radius: 0;
-  overflow: auto;
+  overflow-wrap: break-word;
+  
 }
 .mymessage .msg-img {
   margin: 0 0 0 10px;

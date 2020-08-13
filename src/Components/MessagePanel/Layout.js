@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Button} from 'react-bootstrap';
 class Layout extends Component{
 
     closeHandler=(e)=>{
@@ -14,10 +14,11 @@ class Layout extends Component{
     render(){
         return (
             <div className="Layout">
-                 <div class="msger-header-title">JotForm Chat</div>
-                 <button type="button" class="logoutbutton" onClick={this.closeHandler}>
-          <span class="glyphicon glyphicon-log-out"></span> Log out
-        </button>
+                 <div class="chat-title">JotForm Chat</div>
+                 <div>
+                 <Button variant="outline-danger" onClick={this.closeHandler}>Log out</Button>{' '}
+                 </div>
+          
             </div>
         
         )

@@ -39,13 +39,14 @@ class MessagePanel extends Component {
   this.props.connection.send(JSON.stringify(data))
   this.props.setUsernameNull(null)
  }
+
+ 
   render(){ 
   return (
     <section className="MessagePanel">
       
-      <div className='header'>
+      
       <Layout logout={this.logout}/>
-      </div>
       <DisplayMessages messages={this.state.messages} username={this.props.username} />
       <MessageBox sendMessage={this.sendMessage} username={this.props.username} />
       </section>

@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Login from './Components/Login/Login';
 import MessagePanel from './Components/MessagePanel/MessagePanel';
-import {Route, BrowserRouter, Switch} from 'react-router-dom';
-
-
-
 
 class App extends Component{
 
@@ -41,9 +37,7 @@ class App extends Component{
               }
             </div>
           );
-
-
-        
+ 
     }
 }
 

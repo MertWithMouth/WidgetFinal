@@ -2,44 +2,49 @@ import React, { Component } from 'react';
 import './MessageBox.css'
 
 
+
 class MessageBox extends Component {
 
-    state={
-        message:''
+    constructor(props){
+        super(props)
+        this.state={
+            message:''
+        }
+        this.changeHandler=this.changeHandler.bind(this);
+        this.submitHandler=this.submitHandler.bind(this);
+        this.MessageHandler=this.MessageHandler.bind(this);
+    }
+    
+
+    changeHandler =(e)=>{
+        this.setState({message: e.target.value});
+
     }
 
-    messageHandler=(e) =>{
-     
-        this.setState({message: e.target.value})
-        
-    
-}
 
     submitHandler=(e)=>{
-    
         e.preventDefault();
-       this.props.sendMessage(this.state.message)
-       this.setState({message:''})
-   
-       
+        this.props.sendMessage(this.state.message);
+        this.setState({message: ""});
+
     }
+
+    MessageHandler = (e) => {
+        if(e.keyCode === 13){
+
+            e.preventDefault();
+            this.props.sendMessage(this.state.message);
+            this.setState({message: ""});
+        }
+    }
+
 
     
    render(){
         return (
-  
-
-        <form className="sendmessageform" onSubmit={this.submitHandler} > 
-
-                
-    
-             <input className='inputarea' type ='text' placeholder="Type your message"
-             onChange={this.messageHandler} 
-             value={this.state.message} rows="3"
-             
-             />
-            
-             <button type="submit" class="sendbutton">Send</button>
+        <form className="sendmessageform" > 
+            <textarea class="form-control" id="exampleFormControlTextarea1" onKeyDown={this.MessageHandler} placeholder="Type your message" rows={2} onChange={this.changeHandler} value={this.state.message}></textarea>
+             <button type="submit" class="sendbutton" onClick={this.submitHandler}>Send</button>
         </form>
      
    
