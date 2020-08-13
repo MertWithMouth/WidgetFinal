@@ -66,6 +66,7 @@
 
 .othermessage .messagecontent {
   border-bottom-left-radius: 0;
+  overflow: auto;
 }
 
 .mymessage {
@@ -75,6 +76,7 @@
   background: var(--mymessage-bg);
   color: #fff;
   border-bottom-right-radius: 0;
+  overflow: auto;
 }
 .mymessage .msg-img {
   margin: 0 0 0 10px;
