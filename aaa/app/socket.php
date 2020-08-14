@@ -39,7 +39,7 @@ class Socket implements MessageComponentInterface {
 
       $this->clients->detach($conn);
 
-      echo "Connection {$conn->resourceId} has disconnected\n";
+      echo "Connection %d has disconnected\n";
   }
 
   public function onError(ConnectionInterface $conn, \Exception $e) {

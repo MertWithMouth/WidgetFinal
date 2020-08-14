@@ -11,7 +11,7 @@
     transition: all 0.5s;
     cursor: pointer;
     align-items: center;
-    margin-top: 15px;
+    
    
   }
   
@@ -62,8 +62,9 @@
   }
   .errormessage{
     color: #f4511e;
-    margin-top: 10px;
-    
+   width: 100%;
+    text-align: center;
+    display: block;
 
 
   }
@@ -127,4 +128,3 @@
   }
 }
 
- 

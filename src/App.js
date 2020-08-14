@@ -40,6 +40,7 @@ class App extends Component{
 
       setUsernameNull=(username)=>{
         this.setState({username})
+        this.setState({error: ""})
       }
 
       connection = new WebSocket('ws://localhost:8080/')
