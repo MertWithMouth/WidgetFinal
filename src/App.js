@@ -6,14 +6,19 @@ import MessagePanel from './Components/MessagePanel/MessagePanel';
 class App extends Component{
 
 
-  
-  state = {
+  constructor(){
+    super()
+     this.state = {
     
-    username: null,
-    error:''
+      username: null,
+      error:''
+    }
+    this.setUsername=this.setUsername.bind(this);
+    this.setUsernameNull=this.setUsernameNull.bind(this);
   }
+ 
 
-    setUsername = (username) =>{
+    setUsername(username){
       if (username.length >15) {
         this.setState({error: "Username is too long"})
     }
@@ -27,18 +32,12 @@ class App extends Component{
         this.setState({error: "Username can't start with special character"})
 
       }
-
-
       else{
         this.setState({username})
-
       }
-
-     
   }
 
-
-      setUsernameNull=(username)=>{
+      setUsernameNull(username){
         this.setState({username})
         this.setState({error: ""})
       }
@@ -53,7 +52,11 @@ class App extends Component{
               !this.state.username ?
                 <Login setUsername={this.setUsername} setUsers={this.setUsers} error={this.state.error}/>
                 :
-                <MessagePanel className='messagepanel' username = {this.state.username} users={this.state.users} connection={this.connection} setUsernameNull={this.setUsernameNull}/>
+                <MessagePanel className='messagepanel' 
+                              username = {this.state.username} 
+                              users={this.state.users} 
+                              connection={this.connection} 
+                              setUsernameNull={this.setUsernameNull}/>
               }
             </div>
           );
