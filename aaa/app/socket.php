@@ -8,8 +8,6 @@ use Ratchet\ConnectionInterface;
 class Socket implements MessageComponentInterface {
 
   protected $clients;
-   private $activeUsers;
-   private $activeConnections;
 
 
   public function __construct() {
@@ -23,9 +21,6 @@ class Socket implements MessageComponentInterface {
   }
 
   public function onMessage(ConnectionInterface $from, $msg) {
-        $numRecv = count($this->clients) - 1;
-        echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
-            , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
         foreach ($this->clients as $client) {
             if ($from !== $client) {
@@ -39,7 +34,7 @@ class Socket implements MessageComponentInterface {
 
       $this->clients->detach($conn);
 
-      echo "Connection %d has disconnected\n";
+      echo "Connection {$conn->resourceId} has disconnected\n";
   }
 
   public function onError(ConnectionInterface $conn, \Exception $e) {
